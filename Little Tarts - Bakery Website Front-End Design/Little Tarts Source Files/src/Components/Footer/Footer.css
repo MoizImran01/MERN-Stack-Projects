@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+
+.first-container
+{
+    display: flex;
+    gap: 100px;
+    margin-bottom: 50px;
+}
+input{
+    border: 0px;
+    outline: none;
+    width: 100%;
+    background-color: #d040b3;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    padding: 10px;
+    
+  
+}
+
+input::placeholder {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.subject-box
+{
+    min-width: 60%;
+  
+}
+.city-box
+{
+    min-width: 30%;
+   
+}
+
+.second-container
+{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.name-box
+{
+    min-width: 30%;
+}
+
+.phone-box
+{
+    min-width: 30%;
+}
+
+.email-box
+{
+    min-width: 30%;
+}
+
+
+.third-container
+{
+    display: flex;
+ 
+}
+.message-box
+{
+    min-width: 100%;
+}
+
+.footer
+{
+    background-color: #d040b3;
+    margin-top: 100px;
+    border-radius: 35px;
+   
+}
+
+.footer-heading
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: rgb(255, 231, 199);
+    font-family: "DM Sans", sans-serif;
+    letter-spacing: 2px;
+}
+.submit
+{
+margin-top: 50px;
+padding: 20px;
+text-align: center;
+margin-left: 3px;
+
+}
+
+.social-media
+{
+    margin-top: 90px;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.footer-link
+{
+    color: rgb(255, 238, 215);
+    text-decoration: none;
+    font-size: 18px;
+    font-family: "DM Sans", sans-serif;
+
+}
+.bottom
+{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding: 30px;
+    
+}
+
+.btm-footer
+{
+    font-size: 18px;
+    font-family: "DM Sans", sans-serif;
+    color: rgb(255, 238, 215);
+}
+
+.submit{
+    position: relative;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: rgb(255, 123, 198);
+    background-color: rgb(255, 240, 209);
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.4s;
+    font-weight: 600;
+    border-bottom: 4px solid rgb(177, 12, 192);
+    border-right: 2px solid rgb(177, 12, 192);
+    border-left: 1px solid rgb(177, 12, 192);
+  }
+  
+  .submit::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background-color: hotpink;
+  
+    transition: height 0.4s;
+  
+  }
+  
+  .submit:hover::before {
+    height: 100%;
+  }
+  
+  
+  
+  .submit:hover{
+    color: rgb(255, 240, 211)
+  }
+
+  button span {
+    position: relative;
+    z-index: 1;
+  }

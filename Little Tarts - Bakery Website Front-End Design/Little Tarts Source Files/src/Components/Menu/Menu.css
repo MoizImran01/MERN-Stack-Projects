@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Sawarabi+Mincho&display=swap');
+.menu-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    max-width: 100%;
+}
+
+.menu-header-text {
+    font-size: 5rem;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 800;
+    color: rgb(255, 105, 205);
+    margin-bottom: 120px;
+   
+}
+
+.menu-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.top-menu-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.menu-item {
+    max-width: 400px;
+
+    background-color: rgb(255, 251, 245);
+    border-radius: 35px;
+    border: 0px solid rgb(255, 105, 225); 
+   
+}
+
+.butter {
+    width: 100%; 
+    max-width: 400px;
+
+}
+
+.topmenu-icon {
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+    background-color: black;
+}
+
+.bottom-text {
+    min-width: 40%;
+}
+
+.bottom-text-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(255, 251, 245);
+    margin-top: 20px;
+    padding: 5px;
+    border-radius: 0 0 15px 15px;
+
+}
+
+.toptext > p {
+    color: rgb(255, 43, 195);
+    font-size: 1.5rem;
+    font-family: "Satisfy", cursive;
+    letter-spacing: 3px;
+    line-height: 45px;
+    font-weight: 900;
+}
+
+.btm-text > p {
+    color: rgb(255, 43, 195);
+    font-size: 1rem;
+    font-family: "Sawarabi Mincho", serif;
+    font-weight: 1000;
+
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.cart {
+    max-width: 70px;
+    max-height: 70px;
+    border-radius: 50%;
+    border: solid rgb(255, 0, 200) 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart > img {
+    max-width: 40px;
+}
+.all-flavours
+{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: solid 3px rgb(255, 105, 205);
+}
+.all-flavours-btn
+{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.top-layer
+{
+    position: relative;
+    z-index: 10;
+    background-color: red;
+}
+
+.cart{
+    position: relative;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: rgb(255, 123, 198);
+    background-color: rgb(255, 240, 209);
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.4s;
+    font-weight: 600;
+    border-bottom: 4px solid rgb(177, 12, 192);
+    border-right: 2px solid rgb(177, 12, 192);
+    border-left: 1px solid rgb(177, 12, 192);
+  }
+  
+  .cart::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background-color: hotpink;
+  
+    transition: height 0.4s;
+  
+  }
+  
+  .cart:hover::before {
+    height: 100%;
+  }
+  
+  
+  
+  .cart:hover{
+    color: rgb(255, 240, 211)
+  }
+
+  button span {
+    position: relative;
+    z-index: 1;
+  }
+  .all-flavours{
+    position: relative;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: rgb(255, 123, 198);
+    background-color: rgb(255, 240, 209);
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.4s;
+    font-weight: 600;
+    border: 2px solid rgb(255, 71, 234);
+  
+  }
+  
+  .all-flavours::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background-color: hotpink;
+  
+    transition: height 0.4s;
+  
+  }
+  
+  .all-flavours:hover::before {
+    height: 100%;
+  }
+  
+  
+  
+  .all-flavours:hover{
+    color: rgb(255, 240, 211)
+  }

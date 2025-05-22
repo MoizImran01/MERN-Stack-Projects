@@ -1,0 +1,6 @@
+/* ScrollWrapper.css */
+
+.scroll-container {
+    position: relative;
+    overflow: hidden; 
+}

@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+.hero-container {
+  background-color: rgb(255, 223, 180);
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 60px;
+  overflow: hidden;
+  padding: 20px;
+  margin: 20px;
+  box-sizing: border-box;
+}
+
+
+.text {
+  font-size: clamp(2.5rem, 6vw, 7rem); 
+  text-align: center;
+  padding: 20px;
+  font-family: "DM Sans", sans-serif;
+  color: rgb(255, 98, 205);
+  font-weight: 500;
+  word-break: break-word; 
+  line-height: 1.1;
+}
+
+
+.hero-texts {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(30%);
+}
+
+
+@media (max-width: 768px) {
+  .hero-container {
+    height: auto;
+    padding: 30px 15px;
+  }
+  .text {
+    padding: 10px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .hero-container {
+    border-radius: 30px;
+    margin: 10px;
+  }
+  .text {
+    font-size: clamp(1.5rem, 8vw, 3rem);
+  }
+}

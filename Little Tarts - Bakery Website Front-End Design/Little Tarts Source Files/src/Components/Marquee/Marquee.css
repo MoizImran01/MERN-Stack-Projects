@@ -1,0 +1,91 @@
+
+
+
+.marquee-sec, .marqueesec, .marquee-enrich {
+    position: absolute; /* Ensure proper positioning */
+    width: 100%;
+}
+
+.marquee {
+   
+    display: flex;
+    overflow: hidden;
+    height: 15vh;
+    transform: skewY(1deg) rotate(-9deg) translateY(-650px) translateX(100px);
+}
+
+.marquee__group, .marquee__groupsec, .marquee__groupenrich {
+    display: flex;
+    gap: 2rem;
+    animation: scroll-left 15s linear infinite; /* Animation for the marquee groups */
+}
+
+.marquee__group span, .marquee__groupsec span, .marquee__groupenrich span {
+    color: rgb(254, 98, 221);
+    font-size: 5vw;
+    font-weight: 700;
+    white-space: nowrap;
+    font-family: 'Syne', sans-serif;
+}
+
+.marquee__group span.splend {
+    color: transparent; /* Make text transparent */
+    -webkit-text-stroke: 2px rgb(254, 98, 221); /* Outline the text */
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.marqueesec {
+    display: flex;
+    overflow: hidden;
+    height: 15vh;
+    transform: skewY(1deg) rotate(-9deg) translateY(-500px) translateX(65px);
+}
+
+.marquee__groupsec {
+    display: flex;
+    gap: 2rem;
+    animation: scroll-right 15s linear infinite; /* Animation for the second marquee */
+}
+
+.marquee__groupsec span.flavourful {
+    color: transparent; /* Make text transparent */
+    -webkit-text-stroke: 2px rgb(254, 98, 221); /* Outline the text */
+}
+
+@keyframes scroll-right {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.marquee-enrich {
+    display: flex;
+    overflow: hidden;
+    height: 15vh;
+    transform: skewY(1deg) rotate(-9deg) translateY(-500px) translateX(75px);
+}
+
+.marquee__groupenrich {
+    display: flex;
+    gap: 2rem;
+    animation: scroll-left 15s linear infinite; /* Animation for the third marquee */
+}
+.marquee__groupenrich span
+{
+    color: rgb(254, 171, 98);
+}
+.marquee__groupenrich span.Enrich {
+    color:transparent; /* Make text transparent */
+    -webkit-text-stroke: 2px rgb(254, 171, 98); /* Outline the text */
+}
