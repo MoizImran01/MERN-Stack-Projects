@@ -5,7 +5,7 @@ import userRoutes from './routes/userRoutes.js';
 import gameRoutes from './routes/gameRouter.js';  
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:8000'; 
+
 
 export const app = express();
 
