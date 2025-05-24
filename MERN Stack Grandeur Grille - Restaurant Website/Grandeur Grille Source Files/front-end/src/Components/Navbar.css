@@ -1,131 +1,143 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
 
+/* Base Styling */
 .navbar-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-    margin: auto;
-    padding: 20px 40px;
-    position: relative;
-    background-color: #F1F8E8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: #F1F8E8;
+  position: relative;
+  flex-wrap: wrap;
+  font-family: "Arimo", sans-serif;
 }
 
-.active
-{
-    border-bottom: solid 2px rgb(128, 170, 147);
+/* Active menu item underline */
+.active {
+  border-bottom: 2px solid rgb(128, 170, 147);
 }
 
+/* Logo Section */
 .navbar-logo {
   flex: 1;
-}
-
-.navbar-center {
-    display: flex;
-    justify-content: center;
-    flex: 2;
-    gap: 40px;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
-    opacity: 1;
-}
-
-.navbar-center > * {
-    font-family: "Arimo", sans-serif;
-    color: #2c806f;
-    cursor: pointer;
-    
-}
-.navbar-center > *:hover{
-    border-bottom: solid 2px;
-}
-
-.navbar-right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex: 1;
-    gap: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .logo {
-    max-width: 200px;
+  width: clamp(100px, 20vw, 200px);
+  height: auto;
 }
 
-.cart, .search {
-    max-width: 40px;
-    cursor: pointer;
+/* Center Navigation */
+.navbar-center {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex: 2;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar-center > * {
+  color: #2c806f;
+  cursor: pointer;
+  transition: border-bottom 0.2s;
+}
+
+.navbar-center > *:hover {
+  border-bottom: 2px solid #2c806f;
+}
+
+/* Right Section (Sign Up + Cart + Menu Btn) */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  gap: 20px;
 }
 
 .signup-btn {
-    min-width: 100px;
-    min-height: 45px;
-    border: solid 0.5px #759889;
-    border-radius: 100px;
-    font-family: "Arimo", sans-serif;
-    background-color: #effff5;
-    transition: 0.3s;
-    cursor: pointer;
+  padding: 10px 20px;
+  min-width: 100px;
+  border: 0.5px solid #759889;
+  border-radius: 100px;
+  background-color: #effff5;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1rem;
 }
 
 .signup-btn:hover {
-    background-color: #ccffeaa0;
+  background-color: #ccffeaa0;
 }
 
+.cart {
+  width: clamp(20px, 5vw, 40px);
+  height: auto;
+  cursor: pointer;
+}
+
+
+
+/* Mobile Menu Toggle */
 .menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+   z-index: 1001;
 }
 
+/* ===================== Responsive Styles ===================== */
+
+/* Tablet and Below */
 @media (max-width: 768px) {
-    .navbar-center {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 105px;
-        width: 200px;
-        right: 20px;
-        padding: 30px;
-        background-color: #ffffff;
-        z-index: 1000;
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-        pointer-events: none;
-    }
+  .navbar-center {
+    position: absolute;
+    top: 60%;
+    right: 20px;
+    background-color: #ffffff;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    z-index: 999;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
 
-    .navbar-center.open {
-        max-height: 260px;
-        opacity: 1;
-        pointer-events: auto;
-    }
+  .navbar-center.open {
+    max-height: 300px;
+    opacity: 1;
+    pointer-events: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
 
-    .menu-btn {
-        display: block;
-    }
+  .menu-btn {
+    display: block;
+  }
 }
 
+/* Small Devices (Mobile) */
 @media (max-width: 576px) {
-    .navbar-logo {
-        flex: 2;
-    }
+  .navbar-container {
+    padding: 15px 20px;
+  }
 
-    .navbar-right {
-        flex: 2;
-    }
+  .navbar-logo, .navbar-right {
+    flex: 1;
+  }
 
-    .logo {
-        max-width: 150px;
-    }
+  .signup-btn {
+    min-width: 70px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
 
-    .signup-btn {
-        min-width: 70px;
-        min-height: 35px;
-    }
-
-    .cart, .search {
-        max-width: 25px;
-    }
+  .menu-btn {
+    font-size: 20px;
+  }
 }

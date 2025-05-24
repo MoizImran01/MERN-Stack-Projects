@@ -3,9 +3,12 @@ import cors from "cors";
 import { connectDB } from "./config/db.js";
 import foodRouter from "./routes/foodRoute.js";
 import userRouter from "./routes/userRoute.js";
-import 'dotenv/config.js'
-
+import { config } from "dotenv";
 // app config
+
+config({
+  path: './config.env', 
+});
 const app = express();
 const port = 4000;
 

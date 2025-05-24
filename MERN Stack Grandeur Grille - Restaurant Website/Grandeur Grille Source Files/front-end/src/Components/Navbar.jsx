@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 import logoimg from '../../assets/logo.png';
-import search from '../../assets/search-icon.png';
+
 import cartimg from '../../assets/cart.png';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({setShowLogin}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,7 +15,7 @@ const Navbar = ({setShowLogin}) => {
   return (
     <div className='navbar-container'>
       <div className="navbar-logo">
-        <img src={logoimg} alt="Logo" className="logo" />
+        <Link to='/'> <img src={logoimg} alt="Logo" className="logo" /></Link>
       </div>
 
       <div className={`navbar-center ${isMenuOpen ? 'open' : ''}`}>
@@ -28,8 +29,7 @@ const Navbar = ({setShowLogin}) => {
         <button className="signup-btn" onClick={()=>setShowLogin(true)}>
           Sign Up
         </button>
-        <img className='search' src={search} alt="Search"/>
-        <img className='cart' src={cartimg} alt="Cart"/>
+        <Link to='/cart' ><img className='cart' src={cartimg} alt="Cart"/></Link>
         <button className="menu-btn" onClick={toggleMenu}>
           {isMenuOpen ? '✖' : '☰'}
         </button>

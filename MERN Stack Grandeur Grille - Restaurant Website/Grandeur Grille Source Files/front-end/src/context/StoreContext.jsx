@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { food_list } from "../../assets/assets";
+import { food_list } from "../../assets/assets.js";
 
 export const StoreContext = createContext(null);
 
@@ -8,24 +8,19 @@ const StoreContextProvider = (props) => {
   const url = "http://localhost:4000"
   const [token, setToken] = useState("");
   const addToCart = (itemId) => {
+    if (!cartItems[itemId]) {
+      setCartItems((prev) => ({...prev, [itemId]: 1 }));
+    }
+      else{
+       setCartItems ((prev) => ({...prev, [itemId]:prev[itemId]+1}))
+      }
     console.log(`addToCart called with itemId: ${itemId}`);
-    setCartItems((prev) => ({
-      ...prev,
-      [itemId]: (prev[itemId] || 0) + 1,
-    }));
+ 
   };
 
   const removeFromCart = (itemId) => {
     console.log(`removeFromCart called with itemId: ${itemId}`);
-    setCartItems((prev) => {
-      const updatedItems = { ...prev };
-      if (updatedItems[itemId] > 1) {
-        updatedItems[itemId] -= 1;
-      } else {
-        delete updatedItems[itemId];
-      }
-      return updatedItems;
-    });
+    setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
   };
 
   useEffect(() => {
