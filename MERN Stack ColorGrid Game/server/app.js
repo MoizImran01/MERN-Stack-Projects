@@ -3,7 +3,6 @@ import cors from "cors";
 import authRoutes from './routes/authRoutes.js'; 
 import userRoutes from './routes/userRoutes.js';  
 import gameRoutes from './routes/gameRouter.js';  
-import axios from 'axios';
 
 
 
