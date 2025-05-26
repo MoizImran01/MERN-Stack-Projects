@@ -1,19 +1,20 @@
 import React, { useContext } from 'react';
 import { StoreContext } from '../../context/StoreContext';
-import { Link } from 'react-router-dom';  // import Link for routing
+import { Link, useNavigate } from 'react-router-dom';  
 import './Cart.css';
 
 const Cart = () => {
   const { cartItems, food_list, removeFromCart } = useContext(StoreContext);
-
+  const navigate = useNavigate();
   const cartEntries = food_list.filter(item => cartItems[item.id] > 0);
 
   const subtotal = cartEntries.reduce((acc, item) => {
     return acc + item.price * cartItems[item.id];
   }, 0);
 
-  const deliveryFee = 2;
-  const total = subtotal + deliveryFee;
+ 
+  const deliveryFee = cartEntries.length > 0 ? 2 : 0;
+  const total = cartEntries.length > 0 ? subtotal + deliveryFee : 0;
 
   return (
     <div className='cart-icon'>
@@ -34,7 +35,7 @@ const Cart = () => {
               <p>{item.name}</p>
               <p>${item.price}</p>
               <p>{cartItems[item.id]}</p>
-              <p>${(item.price * cartItems[item.id]).toFixed(2)}</p>
+              <p>${item.price * cartItems[item.id]}</p>
               <button className="remove-btn" onClick={() => removeFromCart(item.id)}>x</button>
             </div>
             <hr />
@@ -47,27 +48,26 @@ const Cart = () => {
           <h2>Cart Total</h2>
           <div className="cart-total-details">
             <p>Subtotal</p>
-            <p>${subtotal.toFixed(2)}</p>
+            <p>${subtotal}</p>
           </div>
           <hr />
           <div className="cart-total-details">
             <p>Delivery Fee</p>
-            <p>${deliveryFee.toFixed(2)}</p>
+            <p>${deliveryFee}</p>
           </div>
           <hr />
           <div className="cart-total-details">
             <p className='total-amount'>Total</p>
-            <p className='total-amount'>${total.toFixed(2)}</p>
+            <p className='total-amount'>${total}</p>
           </div>
         </div>
 
         {cartEntries.length > 0 ? (
-          <button className='cart-checkout'>Proceed to Checkout</button>
+          <button className='cart-checkout' onClick={()=>{navigate('/order')}}>Proceed to Checkout</button>
         ) : (
-         <Link to="/" className="order-button">
-  No items in your cart. Click here to start ordering 😋
-</Link>
-
+          <Link to="/" className="order-button">
+            No items in your cart. Click here to start ordering 😋
+          </Link>
         )}
       </div>
     </div>

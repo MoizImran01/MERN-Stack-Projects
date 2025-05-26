@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
 
-/* Base Styling */
+
 .navbar-container {
   display: flex;
   align-items: center;
@@ -12,12 +12,12 @@
   font-family: "Arimo", sans-serif;
 }
 
-/* Active menu item underline */
+
 .active {
   border-bottom: 2px solid rgb(128, 170, 147);
 }
 
-/* Logo Section */
+
 .navbar-logo {
   flex: 1;
   display: flex;
@@ -29,7 +29,7 @@
   height: auto;
 }
 
-/* Center Navigation */
+
 .navbar-center {
   display: flex;
   justify-content: center;
@@ -48,7 +48,7 @@
   border-bottom: 2px solid #2c806f;
 }
 
-/* Right Section (Sign Up + Cart + Menu Btn) */
+
 .navbar-right {
   display: flex;
   align-items: center;
@@ -80,7 +80,7 @@
 
 
 
-/* Mobile Menu Toggle */
+
 .menu-btn {
   display: none;
   background: none;
@@ -90,9 +90,9 @@
    z-index: 1001;
 }
 
-/* ===================== Responsive Styles ===================== */
 
-/* Tablet and Below */
+
+
 @media (max-width: 768px) {
   .navbar-center {
     position: absolute;
@@ -121,7 +121,7 @@
   }
 }
 
-/* Small Devices (Mobile) */
+
 @media (max-width: 576px) {
   .navbar-container {
     padding: 15px 20px;
