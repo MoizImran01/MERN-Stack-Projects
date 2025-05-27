@@ -108,10 +108,10 @@ export const Add = () => {
             >
               <option value="Salad">Salad</option>
               <option value="Rolls">Rolls</option>
-              <option value="Dessert">Dessert</option>
-              <option value="Sandwich">Sandwich</option>
-              <option value="Cake">Cake</option>
-              <option value="Pasta">Pasta</option>
+              <option value="Desserts">Desserts</option>
+              <option value="Sandwiches">Sandwiches</option>
+              <option value="Cakes">Cakes</option>
+              <option value="Pastas">Pastas</option>
               <option value="Noodles">Noodles</option>
             </select>
           </div>

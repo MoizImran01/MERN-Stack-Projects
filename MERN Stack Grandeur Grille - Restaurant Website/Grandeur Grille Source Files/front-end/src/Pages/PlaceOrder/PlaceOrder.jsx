@@ -5,10 +5,10 @@ import './PlaceOrder.css';
 const PlaceOrder = () => {
   const { cartItems, food_list } = useContext(StoreContext);
 
-  const cartEntries = food_list.filter(item => cartItems[item.id] > 0);
+  const cartEntries = food_list.filter(item => cartItems[item._id] > 0);
 
   const subtotal = cartEntries.reduce((acc, item) => {
-    return acc + item.price * cartItems[item.id];
+    return acc + item.price * cartItems[item._id];
   }, 0);
 
   const deliveryFee = 2;

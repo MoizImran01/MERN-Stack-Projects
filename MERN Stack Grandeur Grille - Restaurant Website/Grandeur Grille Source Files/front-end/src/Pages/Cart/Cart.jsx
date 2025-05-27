@@ -4,12 +4,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Cart.css';
 
 const Cart = () => {
-  const { cartItems, food_list, removeFromCart } = useContext(StoreContext);
+  const { cartItems, food_list, removeFromCart, url } = useContext(StoreContext);
   const navigate = useNavigate();
-  const cartEntries = food_list.filter(item => cartItems[item.id] > 0);
+  const cartEntries = food_list.filter(item => cartItems[item._id] > 0);
 
   const subtotal = cartEntries.reduce((acc, item) => {
-    return acc + item.price * cartItems[item.id];
+    return acc + item.price * cartItems[item._id];
   }, 0);
 
  
@@ -29,14 +29,14 @@ const Cart = () => {
         </div>
         <hr />
         {cartEntries.map((item) => (
-          <div key={item.id}>
+          <div key={item._id}>
             <div className="cart-items-item">
-              <img src={item.image} alt={item.name} />
+              <img src={url+'/images/'+item.image} alt={item.name} />
               <p>{item.name}</p>
               <p>${item.price}</p>
-              <p>{cartItems[item.id]}</p>
-              <p>${item.price * cartItems[item.id]}</p>
-              <button className="remove-btn" onClick={() => removeFromCart(item.id)}>x</button>
+              <p>{cartItems[item._id]}</p>
+              <p>${item.price * cartItems[item._id]}</p>
+              <button className="remove-btn" onClick={() => removeFromCart(item._id)}>x</button>
             </div>
             <hr />
           </div>

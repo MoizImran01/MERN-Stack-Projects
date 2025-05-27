@@ -1,105 +1,178 @@
-
-
 .food-item {
   width: 100%;
   border-radius: 15px;
-  box-shadow: 0px 0px 10px black;
-  transition: height 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  overflow: hidden; 
- 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: white;
 }
 
 .food-item.expanded {
-  box-shadow: 0px 0px 20px black;
- 
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+}
+
+.food-item--img-container {
+  position: relative;
+  flex: 1;
+  min-height: 180px;
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.food-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px 0px 0px;
+  transition: transform 0.3s ease;
+}
+
+.food-item:hover .food-item-image {
+  transform: scale(1.03);
+}
+
+.food-item-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.food-item-name-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  min-height: 40px;
+}
+
+.food-item-name-rating > p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c661f;
+  margin: 0;
+  flex: 1;
+  padding-right: 10px;
+}
+
+.food-item-name-rating > img {
+  width: 70px;
+  height: auto;
+  margin-top: 3px;
+}
+
+.food-item-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #278c5d;
+  margin: 10px 0;
+}
+
+.food-item-descr {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+  margin: 8px 0 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+.add {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.add:hover {
+  transform: scale(1.1);
+}
+
+.food-item-counter img {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  transition: transform 0.2s ease;
+}
+
+.food-item-counter img:hover {
+  transform: scale(1.1);
+}
+
+.food-item-counter p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #278c5d;
 }
 
 .food-item--img-container {
   position: relative;
 }
 
-.food-item-image {
-  width: 100%;
-  border-radius: 15px 15px 0px 0px;
+.food-item--img-container .add {
+  width: 40px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
-.food-item-info {
-  padding: 13px;
-}
-
-.food-item-name-rating {
+.food-item-counter {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  gap: 8px;
+  padding: 5px 10px;
+  border-radius: 50px;
+  background-color: rgba(214, 255, 210, 0.9);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.food-item-name-rating > p {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #2c661f;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .food-item-name-rating > p {
+    font-size: 1rem;
+  }
+  
+  .food-item-price {
+    font-size: 1.2rem;
+  }
+  
+  .food-item-descr {
+    font-size: 0.9rem;
+    -webkit-line-clamp: 2;
+  }
+  
+  .food-item--img-container {
+    min-height: 150px;
+  }
 }
 
-.food-item-name-rating > img {
-  margin-top: -13px;
+@media (max-width: 480px) {
+  .food-item-info {
+    padding: 12px;
+  }
+  
+  .food-item-name-rating > img {
+    width: 60px;
+  }
+  
+  .food-item--img-container .add,
+  .food-item-counter {
+    width: 35px;
+    bottom: 10px;
+    right: 10px;
+  }
 }
-
-.food-item-price {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #278c5d;
-}
-
-.food-item-descr {
-  font-size: 1.05rem;
-  color: #000000;
-}
-
-.add {
-  cursor: pointer;
-  animation: none; 
-}
-
-.add:active {
-  animation: add-icon-click 0.3s ease-in-out; 
-}
-
-
-
-.food-item-counter img {
-  cursor: pointer;
-}
-
-.food-item-counter p {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.food-item--img-container
-{
-    position: relative;
-}
-
-.food-item--img-container .add{
-    width: 40px;
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    cursor: pointer;
-    border-radius: 50%;
-
-}
-.food-item-counter
-{
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 6px;
-    border-radius: 50px;
-    background-color: #d6ffd2;
-   
-}
-
