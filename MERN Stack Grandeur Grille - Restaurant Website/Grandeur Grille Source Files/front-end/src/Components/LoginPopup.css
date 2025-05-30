@@ -76,3 +76,8 @@
     font-weight: 500;
     cursor: pointer;
 }
+.login-popup-title img {
+    cursor: pointer;
+    width: 16px;
+    transform: rotate(-2.5deg);
+}

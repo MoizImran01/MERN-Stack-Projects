@@ -13,30 +13,64 @@ useEffect(() => {
     try {
       const response = await axios.get(url + "/api/food/list");
       setFoodList(response.data.food_data);
-      if (localStorage.getItem("token")) {
-        setToken(localStorage.getItem("token"));
+
+      const storedToken = localStorage.getItem("token");
+      if (storedToken) {
+        setToken(storedToken);
+        try {
+          await loadCartData(storedToken);
+        } catch (cartError) {
+          console.log("No cart data found or failed to load cart data:", cartError.response?.data || cartError.message);
+          setCartItems({});
+        }
       }
     } catch (error) {
-      console.log("Error fetching food list ", error);
+      console.error("Error fetching food list:", error);
     }
   };
 
   fetchFoodList();
 }, []);
-  const addToCart = (itemId) => {
+
+const loadCartData = async (token)=>{
+  try{
+  const response = await axios.post(url+"/api/cart/get", {}, {headers:{token}})
+  if(response.data.success)
+  {
+      setCartItems(response.data.cartData);
+  }
+  else
+  {
+    setCartItems({})
+  }
+  }
+  catch(error)
+{
+  console.log("Unexpected Error occured getting cart data", error)
+}
+
+}
+  const addToCart =  async (itemId) => {
     if (!cartItems[itemId]) {
       setCartItems((prev) => ({...prev, [itemId]: 1 }));
     }
       else{
        setCartItems ((prev) => ({...prev, [itemId]:prev[itemId]+1}))
       }
+      if(token)
+      {
+        await axios.post(url+"/api/cart/add", {itemId}, {headers:{token}})
+      }
     console.log(`addToCart called with itemId: ${itemId}`);
  
   };
 
-  const removeFromCart = (itemId) => {
+  const removeFromCart = async (itemId) => {
     console.log(`removeFromCart called with itemId: ${itemId}`);
     setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+    if(token){
+      await axios.post(url+"/api/cart/remove", {itemId}, {headers:{token}})
+    }
   };
 
   useEffect(() => {
