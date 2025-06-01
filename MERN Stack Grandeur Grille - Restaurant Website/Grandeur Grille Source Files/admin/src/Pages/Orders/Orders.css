@@ -1,4 +1,4 @@
-/* Base Styles */
+
 :root {
   --primary-color: #82ad3d;
   --secondary-color: #f8f9fa;
@@ -27,7 +27,6 @@ body {
   color: var(--text-color);
 }
 
-/* Loading State */
 .loading-container {
   display: flex;
   flex-direction: column;
@@ -50,7 +49,7 @@ body {
   to { transform: rotate(360deg); }
 }
 
-/* Orders Container */
+
 .orders-admin-container {
   padding: 2rem;
   max-width: 1400px;
@@ -82,7 +81,6 @@ body {
   color: var(--primary-color);
 }
 
-/* Stats Cards */
 .orders-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -144,7 +142,7 @@ body {
   opacity: 0.8;
 }
 
-/* Orders Table */
+
 .orders-table-container {
   background: var(--white);
   border-radius: 10px;
@@ -212,7 +210,6 @@ body {
   white-space: nowrap;
 }
 
-/* Status Badges */
 .status-badge {
   display: inline-flex;
   align-items: center;
@@ -254,7 +251,6 @@ body {
   color: var(--danger-color);
 }
 
-/* Order Actions */
 .details-btn {
   background-color: var(--primary-color);
   color: white;
@@ -270,7 +266,6 @@ body {
   background-color: #61860b;
 }
 
-/* Order Details */
 .order-details-row td {
   padding: 0 !important;
 }
@@ -280,18 +275,17 @@ body {
   background-color: rgba(74, 107, 255, 0.03);
   border-top: 1px solid var(--border-color);
 }
-/* Add to status badges */
+
 .status-badge.out-for-delivery {
   background-color: rgba(23, 162, 184, 0.1);
   color: var(--info-color);
 }
 
-/* Add to status icons */
+
 .status-icon.out-for-delivery {
   color: var(--info-color);
 }
 
-/* Add to stat icon */
 .stat-icon.out-for-delivery {
   background: linear-gradient(135deg, #ffd13b 0%, #deb55b 100%);
 }
@@ -330,7 +324,7 @@ body {
   line-height: 1.5;
 }
 
-/* Order Items */
+
 .order-items {
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -377,7 +371,6 @@ body {
   font-weight: 600;
 }
 
-/* Payment and Status Controls */
 .payment-section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -441,7 +434,6 @@ body {
   color: var(--dark-color);
 }
 
-/* Empty State */
 .no-orders {
   text-align: center;
   padding: 3rem;
@@ -462,7 +454,6 @@ body {
 }
 
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .orders-admin-container {
     padding: 1rem;

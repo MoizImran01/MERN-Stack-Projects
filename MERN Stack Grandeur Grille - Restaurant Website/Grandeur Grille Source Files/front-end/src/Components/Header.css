@@ -1,4 +1,4 @@
-/* Header.css */
+
 .header-container {
   width: 100%;
   max-width: 100%;
@@ -17,5 +17,5 @@
   height: auto;
   object-fit: cover;
   display: block;
-  border-radius: 8px; /* optional */
+  border-radius: 8px;
 }

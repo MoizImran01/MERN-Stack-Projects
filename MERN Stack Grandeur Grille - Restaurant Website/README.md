@@ -27,3 +27,6 @@ A full-stack restaurant e-commerce website built for Grandeur Grille, combining 
 - Node.js
 - To start the server, cd to "back-end" folder and run: "npm i" to install the dependencies, "npm run server" to start the server
 
+### Note:
+- Stripe Secret Key in the "config.env" must be provided while placing an order to correctly send the API request
+
