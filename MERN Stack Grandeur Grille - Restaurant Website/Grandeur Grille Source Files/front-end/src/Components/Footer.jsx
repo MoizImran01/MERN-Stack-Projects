@@ -7,16 +7,23 @@ import linkedin from '../../assets/linkedin_icon.png'
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div id='footer' className="footer">
     <div className='footer-container'>
         <div className="first-container">
         <img className='footer-logo' src={footerlogo}/>
         <p className='footer-para'>© Grandeur Grille 2024.</p>
         <div className="social">
-        <img src={twitter}/>
-        <img src={facebook}/>
-        <img src={linkedin}/>
-        </div>
+  <a href="https://twitter.com/yourpage" target="_blank" rel="noopener noreferrer">
+    <img src={twitter} alt="Twitter" />
+  </a>
+  <a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer">
+    <img src={facebook} alt="Facebook" />
+  </a>
+  <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+    <img src={linkedin} alt="LinkedIn" />
+  </a>
+</div>
+
         </div>
         <div className="second-container">
             <h2 className="footer-header1">

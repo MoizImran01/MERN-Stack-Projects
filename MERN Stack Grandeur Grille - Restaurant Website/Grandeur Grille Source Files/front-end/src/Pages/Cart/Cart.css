@@ -12,7 +12,7 @@
   color: gray;
   font-size: max(0.9vw, 11px);
   gap: 8px;
-  margin-top: 80px;
+  margin-top: 70px;
 }
 
 .cart-items-item {
@@ -69,7 +69,7 @@
 .cart-checkout {
   border: none;
   color: white;
-  background-color: rgb(100, 200, 100);
+   background-color: rgb(100, 200, 100);
   padding: 12px 5px;
   border-radius: 4px;
   cursor: pointer;
@@ -80,7 +80,7 @@
 }
 
 .cart-checkout:hover {
-  background-color: rgb(80, 180, 80);
+  background-color: rgb(88, 175, 88);
 }
 
 .cart-total > h2{

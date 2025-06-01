@@ -1,8 +1,6 @@
 .DS_Store
 MERN Stack Grandeur Grille - Restaurant Website/Grandeur Grille Source Files/back-end/config.env
-# Ignore all node_modules folders in all subdirectories
-**/node_modules/
-
-# Ignore all .env and config.env files
+node_modules/
 *.env
 config.env
+

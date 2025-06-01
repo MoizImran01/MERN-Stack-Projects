@@ -40,6 +40,7 @@ import profile_icon from './profile_icon.png'
 import bag_icon from './bag_icon.png'
 import logout_icon from './logout_icon.png'
 import custom_profile from './custom_profile.png'
+import parcel_icon from './parcel_icon.png'
 
 
 export const assets={
@@ -49,8 +50,8 @@ remove_icon_red,
 add_icon_green,
 custom_profile,
 bag_icon,
-logout_icon
-
+logout_icon,
+parcel_icon
 }
 
 

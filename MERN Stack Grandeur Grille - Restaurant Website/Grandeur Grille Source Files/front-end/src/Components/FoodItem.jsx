@@ -57,6 +57,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
           ${price}
         </p>
       </div>
+      
     </div>
   );
 };

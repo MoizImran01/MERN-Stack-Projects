@@ -14,7 +14,7 @@
   flex: 1 1 400px;
   max-width: 600px;
   box-sizing: border-box;
-  margin-top: 70px;
+
 }
 
 
@@ -69,6 +69,9 @@
   margin-top: 18px;
   max-width: 120px;
   
+}
+.cart-checkout-placeorder:hover{
+  background-color: rgb(88, 175, 88);
 }
 
 

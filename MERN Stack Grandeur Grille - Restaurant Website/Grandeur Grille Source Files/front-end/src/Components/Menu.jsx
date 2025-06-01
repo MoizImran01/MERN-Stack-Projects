@@ -10,7 +10,7 @@ import menu8 from '../../assets/menu_8.png'
 import './Menu.css'
 const Menu = ({category, setCategory}) => {
   return (
-    <div className='menu-container'>
+    <div id='menu' className='menu-container'>
         <div className="menu-header-container"><h2 className='menu-header'>Explore our delectable menu</h2>
         </div>
         <div className="text-container"><p className="menu-text">Explore from a carefully curated diverse array of dishes bound to satisfy your cravings.</p></div>

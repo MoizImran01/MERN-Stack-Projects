@@ -1,0 +1,226 @@
+/* Reset some defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right top, #f8fafc, #e0f2fe, #dbeafe);
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+}
+
+/* Main Orders Section */
+.my-orders {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem;
+  
+}
+
+.my-orders h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #86b844;
+  font-weight: 700; /* Keep heading bold */
+  text-align: center;
+}
+
+/* Grid Container */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Individual Order Card */
+.my-orders-order {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 1.8rem;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items:baseline;
+  height: 380px; /* Fixed height */
+  justify-content: space-between; /* Even spacing */
+}
+
+/* Hover animation */
+.my-orders-order:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Parcel Icon */
+.my-orders-order img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  animation: pop 0.6s ease forwards;
+}
+
+/* Text styling - UPDATED to remove bold from regular text */
+.my-orders-order p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+  color: #48751e;
+  font-weight: normal; /* Ensures regular text isn't bold */
+}
+
+/* Status Icons */
+.status-icon {
+  margin-right: 8px;
+  font-size: 1.1rem;
+  vertical-align: middle;
+}
+
+.status-icon.processing {
+  color: #FFA500;
+}
+
+.status-icon.out-for-delivery {
+  color: #1E90FF;
+}
+
+.status-icon.delivered {
+  color: #32CD32;
+}
+
+.status-icon.cancelled {
+  color: #FF4500;
+}
+
+.status-icon.default {
+  color: #9370DB;
+}
+
+/* Order Status Text */
+.order-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.8rem;
+}
+
+.order-status-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* UPDATED: Only make detail labels bold */
+.my-orders-order .detail-label {
+  font-weight: bold; /* Only applies to detail labels */
+  margin-right: 5px;
+}
+
+.my-orders-order p b {
+  text-transform: capitalize;
+  color: #48751e;
+  font-weight: bold; /* Keep status text bold */
+}
+.order-date{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Order Amount Highlight - UPDATED to use detail-label class */
+.my-orders-order .amount-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Track Button */
+.my-orders-order button {
+  margin-top: 1.2rem;
+  background-color: #8dc524;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: normal; /* Button text regular */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.my-orders-order button:hover {
+  background-color: #76a51e;
+  transform: translateY(-2px);
+}
+
+/* Empty State */
+.no-orders {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
+.no-orders img {
+  width: 150px;
+  height: 150px;
+  opacity: 0.7;
+  margin-bottom: 1.5rem;
+}
+
+.no-orders p {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: normal;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .my-orders {
+    padding: 1rem;
+  }
+
+  .my-orders h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .my-orders-order {
+    padding: 1.5rem;
+    height: 350px; /* Adjusted for smaller screens */
+  }
+
+  .my-orders-order p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  
+  .my-orders-order {
+    padding: 1.2rem;
+    height: 320px; /* Adjusted for mobile */
+  }
+}
+
+/* Icon animation */
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

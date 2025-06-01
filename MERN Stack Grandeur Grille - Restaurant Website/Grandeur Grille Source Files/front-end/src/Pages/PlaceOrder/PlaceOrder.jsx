@@ -1,13 +1,17 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { StoreContext } from '../../context/StoreContext';
 import './PlaceOrder.css';
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+
+
 
 const PlaceOrder = () => {
+  const navigate = useNavigate();
   const { cartItems, food_list, token, url} = useContext(StoreContext);
 
   const cartEntries = food_list.filter(item => cartItems[item._id] > 0);
-  
+
   const [userData, setUserData] = useState({
     firstName:"",
     lastName:"",
@@ -60,14 +64,19 @@ const onChangeHandler = (event)=>{
     {
       const {session_url} = response.data
       window.location.replace(session_url)
-      alert('Order placed successfully!');
     }
     else
     {
       alert("Error Placing Order")
     }
   };
+useEffect(()=>{
+if(!token || total===0)
+{
+  navigate("/cart")
+}
 
+}, [token, total])
   return (
     <form className='place-order-container' onSubmit={handlePlaceOrder}>
       <div className="place-order-left">

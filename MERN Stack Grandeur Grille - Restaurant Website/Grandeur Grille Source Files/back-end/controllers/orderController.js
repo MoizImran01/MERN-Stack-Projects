@@ -84,4 +84,68 @@ const verifyOrder = async (req, res)=>{
         res.json({success:false, message:"Error"})
     }
 }
-export { placeOrder, verifyOrder };
+//user orders for front-end
+
+const usersOrder = async (req, res) =>{
+try{
+    const orders = await orderModel.find({userId: req.body.userId})
+    res.json({success: true, data: orders})
+}
+catch(error)
+{
+    console.log("An Error Occured : ", error)
+    res.json({success:false, message:"Error"})
+}
+}
+
+// listing orders for the admin panel
+const listOrders = async (req, res)=>{
+try{
+    const orders = await orderModel.find({})
+    res.json({success:true, data:orders})
+}
+catch(error)
+{
+    console.log("An error occured retrieving the orders : ", error)
+    res.json({success:false, message:"An error occured retrieving the order data"})
+}
+}
+
+const updateOrderStatus= async (req, res)=>{
+
+    try{
+        const {orderId} = req.params;
+        const {status} = req.body;
+        const updatedOrder = await orderModel.findByIdAndUpdate(
+      orderId,
+      { status },
+      { new: true } 
+     
+    );
+    console.log("Order updated successfully")
+    return res.json({success:true, message: "Order Status Updated Succcessfully"})
+    }
+    catch(error)
+    {
+        console.log("An unexpected error occured updating the user's order status : ", error)
+        return res.json({success:false, message: "Unexpected error occured updating the user's data"})
+    }
+
+}
+
+const getOrderStatus = async (req, res)=>{
+    try{
+    const orderId = req.params
+    const orders = await orderModel.findById(orderId)
+    console.log("Order status retrieved successfully")
+    return res.json({success:true, message:orders.status})
+    }
+    catch(error)
+    {
+        console.log("An error occured retrieving order status", error)
+        return res.json({successs:false, message: "Could not retrieve order status"})
+    }
+
+}
+
+export { placeOrder, verifyOrder, usersOrder, listOrders, updateOrderStatus, getOrderStatus};
