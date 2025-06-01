@@ -2,7 +2,7 @@
 
 
 .marquee-sec, .marqueesec, .marquee-enrich {
-    position: absolute; /* Ensure proper positioning */
+    position: absolute;
     width: 100%;
 }
 
@@ -17,7 +17,7 @@
 .marquee__group, .marquee__groupsec, .marquee__groupenrich {
     display: flex;
     gap: 2rem;
-    animation: scroll-left 15s linear infinite; /* Animation for the marquee groups */
+    animation: scroll-left 15s linear infinite; 
 }
 
 .marquee__group span, .marquee__groupsec span, .marquee__groupenrich span {
@@ -29,8 +29,8 @@
 }
 
 .marquee__group span.splend {
-    color: transparent; /* Make text transparent */
-    -webkit-text-stroke: 2px rgb(254, 98, 221); /* Outline the text */
+    color: transparent;
+    -webkit-text-stroke: 2px rgb(254, 98, 221); 
 }
 
 @keyframes scroll-left {
@@ -52,12 +52,12 @@
 .marquee__groupsec {
     display: flex;
     gap: 2rem;
-    animation: scroll-right 15s linear infinite; /* Animation for the second marquee */
+    animation: scroll-right 15s linear infinite; 
 }
 
 .marquee__groupsec span.flavourful {
-    color: transparent; /* Make text transparent */
-    -webkit-text-stroke: 2px rgb(254, 98, 221); /* Outline the text */
+    color: transparent;
+    -webkit-text-stroke: 2px rgb(254, 98, 221); 
 }
 
 @keyframes scroll-right {
@@ -79,13 +79,13 @@
 .marquee__groupenrich {
     display: flex;
     gap: 2rem;
-    animation: scroll-left 15s linear infinite; /* Animation for the third marquee */
+    animation: scroll-left 15s linear infinite; 
 }
 .marquee__groupenrich span
 {
     color: rgb(254, 171, 98);
 }
 .marquee__groupenrich span.Enrich {
-    color:transparent; /* Make text transparent */
-    -webkit-text-stroke: 2px rgb(254, 171, 98); /* Outline the text */
+    color:transparent; 
+    -webkit-text-stroke: 2px rgb(254, 171, 98); 
 }

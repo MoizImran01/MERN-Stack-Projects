@@ -12,7 +12,7 @@ min-height: 100vh;
 }
 .top-img-container {
     position: relative;
-     /* Ensure TopImg is above other content */
+    
 }
 .marquee-section
 {

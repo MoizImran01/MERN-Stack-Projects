@@ -1,7 +1,7 @@
 import React from 'react';
 import TopImg from './Components/TopImg/TopImg';
 import './App.css';
-import Navbar from './Components/Narbar/Navbar';
+import Navbar from './Components/Navbar/Navbar';
 import HeaderComponent from './Components/Header/HeaderComponent';
 import Marquee from './Components/Marquee/Marquee';
 import LocomotiveScroll from 'locomotive-scroll';
