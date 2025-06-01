@@ -1,6 +1,5 @@
 .DS_Store
 MERN Stack Grandeur Grille - Restaurant Website/Grandeur Grille Source Files/back-end/config.env
 node_modules/
-*.env
-config.env
+
 
