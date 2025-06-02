@@ -133,19 +133,6 @@ const updateOrderStatus= async (req, res)=>{
 
 }
 
-const getOrderStatus = async (req, res)=>{
-    try{
-    const orderId = req.params
-    const orders = await orderModel.findById(orderId)
-    console.log("Order status retrieved successfully")
-    return res.json({success:true, message:orders.status})
-    }
-    catch(error)
-    {
-        console.log("An error occured retrieving order status", error)
-        return res.json({successs:false, message: "Could not retrieve order status"})
-    }
 
-}
 
-export { placeOrder, verifyOrder, usersOrder, listOrders, updateOrderStatus, getOrderStatus};
+export { placeOrder, verifyOrder, usersOrder, listOrders, updateOrderStatus};

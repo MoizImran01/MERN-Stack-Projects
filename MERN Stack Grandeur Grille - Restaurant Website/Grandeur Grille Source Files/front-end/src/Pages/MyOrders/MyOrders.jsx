@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './MyOrders.css';
 import { StoreContext } from '../../context/StoreContext';
 import axios from 'axios';
@@ -8,7 +8,7 @@ import { FiPackage, FiCheckCircle, FiXCircle, FiClock, FiTruck, FiCalendar } fro
 const MyOrders = () => {
   const { url, token } = useContext(StoreContext);
   const [data, setData] = useState([]);
-  const hasFetched = useRef(false);
+ 
 
   const fetchOrders = async () => {
     try {
@@ -24,9 +24,8 @@ const MyOrders = () => {
   };
 
   useEffect(() => {
-    if (token && !hasFetched.current) {
+    if (token) {
       fetchOrders();
-      hasFetched.current = true;
     }
   }, [token]);
 
@@ -51,7 +50,6 @@ const MyOrders = () => {
       <div className="container">
         {data.length === 0 ? (
           <div className="no-orders">
-            <img src={assets.empty_cart} alt="No orders" />
             <p>You haven't placed any orders yet</p>
           </div>
         ) : (
